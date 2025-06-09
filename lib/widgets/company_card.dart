@@ -266,80 +266,39 @@ class _CompanyCardState extends State<CompanyCard> {
     );
   }
 
-  Widget _buildFeatureItem(IconData icon, String label, String content) {
-    String displayContent = content;
-    if (label == 'Funding') {
-      final totalFunding = widget.company.fundingRounds.fold<double>(
-        0,
-        (sum, round) => sum + round.amount,
-      );
-      displayContent = '\$${totalFunding.toStringAsFixed(1)}M';
-    }
-
+  Widget _buildFeatureItem(IconData icon, String label, String value) {
     return InkWell(
-      onTap: () => _onFeatureTap(_features.indexWhere((feature) => feature['label'] == label)),
-      borderRadius: BorderRadius.circular(4),
-      child: Container(
-        padding: EdgeInsets.zero,
-        decoration: BoxDecoration(
-          color: _selectedFeatureIndex == _features.indexWhere((feature) => feature['label'] == label)
-              ? Theme.of(context).colorScheme.primary.withOpacity(0.1)
-              : Theme.of(context).colorScheme.surface,
-          borderRadius: BorderRadius.circular(4),
-          border: Border.all(
-            color: _selectedFeatureIndex == _features.indexWhere((feature) => feature['label'] == label)
-                ? Theme.of(context).colorScheme.primary
-                : Theme.of(context).colorScheme.outline.withOpacity(0.2),
+      onTap: () {
+        showDialog(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            content: Text(value.isNotEmpty ? value : 'Not available'),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.of(ctx).pop(),
+                child: const Text('Close'),
+              ),
+            ],
           ),
+        );
+      },
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+        decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.secondary.withOpacity(0.1),
+          borderRadius: BorderRadius.circular(8),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(
-                  icon,
-                  size: 8,
-                  color: _selectedFeatureIndex == _features.indexWhere((feature) => feature['label'] == label)
-                      ? Theme.of(context).colorScheme.primary
-                      : Theme.of(context).colorScheme.onSurface,
-                ),
-                const SizedBox(width: 2),
-                Flexible(
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Text(
-                      label,
-                      style: TextStyle(
-                        fontSize: 6,
-                        fontWeight: FontWeight.w500,
-                        color: _selectedFeatureIndex == _features.indexWhere((feature) => feature['label'] == label)
-                            ? Theme.of(context).colorScheme.primary
-                            : Theme.of(context).colorScheme.onSurface,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            if (displayContent.isNotEmpty)
-              Flexible(
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    displayContent,
-                    style: TextStyle(
-                      fontSize: 5,
-                      color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
+            Icon(icon, size: 16, color: Theme.of(context).primaryColor),
+            const SizedBox(width: 4),
+            Text(
+              label,
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                fontWeight: FontWeight.w500,
               ),
+            ),
           ],
         ),
       ),

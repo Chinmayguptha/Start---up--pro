@@ -4,6 +4,7 @@ import 'package:share_plus/share_plus.dart';
 import '../models/company_model.dart';
 import '../models/funding_model.dart';
 import 'dart:ui';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CompanyDetailScreen extends StatelessWidget {
   final CompanyModel company;
@@ -92,16 +93,7 @@ class CompanyDetailScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 24),
-                    _buildInfoSection(
-                      context,
-                      'Company Information',
-                      [
-                        _buildInfoRow('Founder', company.founder),
-                        _buildInfoRow('Location', company.location),
-                        _buildInfoRow('Year Founded', company.yearFounded.toString()),
-                        _buildInfoRow('Stage', company.stage),
-                      ],
-                    ),
+                    _buildCompanyInfo(context),
                     const SizedBox(height: 24),
                     _buildInfoSection(
                       context,
@@ -163,6 +155,53 @@ class CompanyDetailScreen extends StatelessWidget {
     );
   }
 
+  Widget _buildCompanyInfo(BuildContext context) {
+    return Card(
+      margin: const EdgeInsets.all(16),
+      elevation: 4,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Wrap(
+              spacing: 12,
+              runSpacing: 12,
+              children: [
+                _buildSimpleButton(context, 'CEO', company.ceo),
+                _buildSimpleButton(context, 'Team', company.team),
+                _buildSimpleButton(context, 'Founded', company.founded),
+                _buildSimpleButton(context, 'Location', company.location),
+                _buildSimpleButton(context, 'Website', company.website),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSimpleButton(BuildContext context, String category, String value) {
+    return TextButton(
+      onPressed: () {
+        showDialog(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            content: Text(value.isNotEmpty ? value : 'Not available'),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.of(ctx).pop(),
+                child: const Text('Close'),
+              ),
+            ],
+          ),
+        );
+      },
+      child: Text(category),
+    );
+  }
+
   Widget _buildInfoSection(BuildContext context, String title, List<Widget> children) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -177,29 +216,6 @@ class CompanyDetailScreen extends StatelessWidget {
         const SizedBox(height: 16),
         ...children,
       ],
-    );
-  }
-
-  Widget _buildInfoRow(String label, String value) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            width: 100,
-            child: Text(
-              label,
-              style: const TextStyle(
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-          Expanded(
-            child: Text(value),
-          ),
-        ],
-      ),
     );
   }
 } 

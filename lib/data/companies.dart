@@ -16,6 +16,8 @@ final List<CompanyModel> dummyCompanies = [
     ceo: 'Alex Chen',
     team: '50+ employees including 30 engineers and 10 AI researchers',
     contact: 'contact@techvisionai.com',
+    founded: '2020',
+    website: 'https://techvisionai.com',
     fundingRounds: [
       FundingModel(
         round: 'Seed',
@@ -47,6 +49,8 @@ final List<CompanyModel> dummyCompanies = [
     ceo: 'Sarah Johnson',
     team: '75+ employees including 40 engineers and 15 scientists',
     contact: 'contact@greenenergysol.com',
+    founded: '2019',
+    website: 'https://greenenergysol.com',
     fundingRounds: [
       FundingModel(
         round: 'Seed',
@@ -85,6 +89,8 @@ final List<CompanyModel> dummyCompanies = [
     ceo: 'Dr. Michael Lee',
     team: '100+ employees including 50 healthcare professionals and 30 AI specialists',
     contact: 'contact@healthtechinno.com',
+    founded: '2018',
+    website: 'https://healthtechinno.com',
     fundingRounds: [
       FundingModel(
         round: 'Seed',
@@ -130,6 +136,8 @@ final List<CompanyModel> dummyCompanies = [
     ceo: 'Priya Sharma',
     team: '60+ employees including 35 engineers and 15 financial experts',
     contact: 'contact@finflowtech.com',
+    founded: '2021',
+    website: 'https://finflowtech.com',
     fundingRounds: [
       FundingModel(
         round: 'Seed',
@@ -161,6 +169,8 @@ final List<CompanyModel> dummyCompanies = [
     ceo: 'David Wilson',
     team: '80+ employees including 45 educators and 25 AI developers',
     contact: 'contact@edutechpro.com',
+    founded: '2020',
+    website: 'https://edutechpro.com',
     fundingRounds: [
       FundingModel(
         round: 'Seed',
@@ -199,6 +209,8 @@ final List<CompanyModel> dummyCompanies = [
     ceo: 'Dr. James Anderson',
     team: '120+ employees including 70 engineers and 30 robotics specialists',
     contact: 'contact@robotechsol.com',
+    founded: '2019',
+    website: 'https://robotechsol.com',
     fundingRounds: [
       FundingModel(
         round: 'Seed',
@@ -244,6 +256,8 @@ final List<CompanyModel> dummyCompanies = [
     ceo: 'Elon Musk Jr.',
     team: '150+ employees including 80 aerospace engineers and 40 scientists',
     contact: 'contact@spacexclone.com',
+    founded: '2022',
+    website: 'https://spacexclone.com',
     fundingRounds: [
       FundingModel(
         round: 'Seed',
@@ -275,6 +289,8 @@ final List<CompanyModel> dummyCompanies = [
     ceo: 'Dr. Sarah Chen',
     team: '90+ employees including 50 researchers and 25 biotech engineers',
     contact: 'contact@biotechinno.com',
+    founded: '2021',
+    website: 'https://biotechinno.com',
     fundingRounds: [
       FundingModel(
         round: 'Seed',
@@ -309,6 +325,8 @@ final List<CompanyModel> dummyCompanies = [
     stage: 'Series C',
     description: 'Secure cryptocurrency storage and trading platform',
     logoUrl: 'https://picsum.photos/seed/cryptovault/200',
+    founded: '2020',
+    website: 'https://cryptovault.com',
     fundingRounds: [
       FundingModel(
         round: 'Seed',
@@ -350,6 +368,8 @@ final List<CompanyModel> dummyCompanies = [
     stage: 'Series A',
     description: 'AI-powered smart home automation and energy management',
     logoUrl: 'https://picsum.photos/seed/smarthome/200',
+    founded: '2021',
+    website: 'https://smarthomeai.com',
     fundingRounds: [
       FundingModel(
         round: 'Seed',
@@ -377,6 +397,8 @@ final List<CompanyModel> dummyCompanies = [
     stage: 'Series B',
     description: 'Sustainable agriculture technology and vertical farming solutions',
     logoUrl: 'https://picsum.photos/seed/agritech/200',
+    founded: '2019',
+    website: 'https://agritechsol.com',
     fundingRounds: [
       FundingModel(
         round: 'Seed',
@@ -411,6 +433,8 @@ final List<CompanyModel> dummyCompanies = [
     stage: 'Series C',
     description: 'Next-generation quantum computing solutions for complex problems',
     logoUrl: 'https://picsum.photos/seed/quantum/200',
+    founded: '2020',
+    website: 'https://quantumcomp.com',
     fundingRounds: [
       FundingModel(
         round: 'Seed',

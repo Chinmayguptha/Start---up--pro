@@ -59,6 +59,8 @@ class _AddCompanyScreenState extends State<AddCompanyScreen> {
         description: _descriptionController.text,
         logoUrl: _logoUrlController.text,
         fundingRounds: [],
+        founded: _yearController.text,
+        website: 'https://' + _domainController.text,
       );
 
       // Add funding round if provided

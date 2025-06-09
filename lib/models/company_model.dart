@@ -15,6 +15,8 @@ class CompanyModel {
   final String founder;
   final String stage;
   final int yearFounded;
+  final String founded;
+  final String website;
   bool bookmarked;
   final List<FundingModel> fundingRounds;
 
@@ -35,6 +37,8 @@ class CompanyModel {
     this.yearFounded = 0,
     this.bookmarked = false,
     required this.fundingRounds,
+    required this.founded,
+    required this.website,
   });
 
   factory CompanyModel.fromJson(Map<String, dynamic> json) {
@@ -57,6 +61,8 @@ class CompanyModel {
       fundingRounds: (json['fundingRounds'] as List)
           .map((e) => FundingModel.fromJson(e))
           .toList(),
+      founded: json['founded'] as String? ?? '',
+      website: json['website'] as String? ?? '',
     );
   }
 
@@ -78,6 +84,8 @@ class CompanyModel {
       'yearFounded': yearFounded,
       'bookmarked': bookmarked,
       'fundingRounds': fundingRounds.map((e) => e.toJson()).toList(),
+      'founded': founded,
+      'website': website,
     };
   }
 
@@ -113,6 +121,8 @@ class CompanyModel {
         ceo: 'Alex Chen',
         team: '50+ employees',
         contact: 'contact@techvisionai.com',
+        founded: '2020',
+        website: 'https://techvisionai.com',
       ),
       CompanyModel(
         id: '2',
@@ -151,6 +161,8 @@ class CompanyModel {
         ceo: 'Sarah Johnson',
         team: '75+ employees',
         contact: 'contact@greenenergysol.com',
+        founded: '2019',
+        website: 'https://greenenergysol.com',
       ),
     ];
   }
