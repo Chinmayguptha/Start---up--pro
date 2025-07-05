@@ -4,7 +4,7 @@
 This Flutter web app showcases a dynamic news and trends feed using data. It is designed to be deployed on GitHub Pages and provides a realistic user experience with clickable links to real, existing websites.
 
 ## Features
-- **Dynamic News Feed**: Displays a shuffled list of dummy news articles with realistic titles, descriptions, and images.
+- **Dynamic News Feed**: Displays a shuffled list of news articles with realistic titles, descriptions, and images.
 - **Tech Trends Section**: Shows a list of tech trends with dynamic data and clickable links.
 - **Responsive Design**: Optimized for both desktop and mobile viewing.
 - **Realistic URLs**: All links point to real, existing websites, ensuring a seamless user experience.
@@ -50,10 +50,4 @@ This Flutter web app showcases a dynamic news and trends feed using data. It is 
 
 ## Technologies Used
 - **Flutter**: For building the web app.
-- **GitHub Pages**: For hosting the static files.
-
-## Contributing
-Feel free to open issues or submit pull requests if you have suggestions for improvements.
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+  
